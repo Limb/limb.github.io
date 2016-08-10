@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ibelimb.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ibelimb.com">
+<meta property="og:url" content="http://ibelimb.com/index.html">
+<meta property="og:site_name" content="ibelimb.com">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ibelimb.com">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="ibelimb.com" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ibelimb.com</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Personal blog for Kenneth Lorthioir</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://ibelimb.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Moved-the-blog-over-to-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/18/Moved-the-blog-over-to-Hexo/" class="article-date">
+  <time datetime="2015-05-18T19:18:35.000Z" itemprop="datePublished">2015-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/18/Moved-the-blog-over-to-Hexo/">Moved the blog over to Hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I have recently moved the blog over to the <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> blogging engine.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ibelimb.com/2015/05/18/Moved-the-blog-over-to-Hexo/" data-id="cirobdgun0001ychby43d64h7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/" class="article-date">
+  <time datetime="2014-03-30T13:42:04.000Z" itemprop="datePublished">2014-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/">Generating a MicroBlaze soft processor with ISE WebPACK 14.7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xilinx provides a limited feature-set version of the <a href="http://www.xilinx.com/tools/microblaze.htm" target="_blank" rel="external">MicroBlaze Soft Processor</a> in the ISE WebPACK. The MicroBlaze allows for much higher level development tasks to be completed with ease. In the following I will show you how to setup a basic MicroBlaze project.</p>
+<p>Begin by opening the ISE Project Navigator and creating a new project, ensuring you choose the correct settings for your specific device. VHDL or Verilog does not make a difference so feel free to pick what you are comfortable with. Right click on your device in the project hierarchy and click ‘New Source…’. Select ‘IP (CORE Generator &amp; Architecture Wizard) as the type, and give it a file name.</p>
+<img src="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/new-source-wizard.png">
+<p>Select ‘MicroBlaze MCS’ from the Embedded Processing -&gt; Processor subfolder and click next and finally finish. After a few moments the MicroBlaze generator will have appeared. It is within this window that we can choose all features we want to enable for our processor. It is important to ensure that you only enable features you need as each option will take up precious space on your design. It is also important that you remember the ‘Instance Hierarchical Design Name’ as we will need it later (in the picture below it is mcs_0). Go ahead and set the Input Clock Frequency to match that of your board, increase the Memory Size to 16KB and Enable Debug Support if you are so inclined.</p>
+<img src="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/microblaze-generator-main.png">
+<p>For this example we will create a processor that will increment a byte by 1 every second, and output the value via UART and onto a set of LED’s. To do so we must go to the UART tab and click ‘Enable Receiver’, ‘Enable Transmitter’ and set the Baud Rate to whatever value you would like.</p>
+<img src="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/uart-tab.png">
+<p>Next click the FIT (Fixed Interval Timer) tab, and click ‘Use Timer’ for FIT 1. Since we will be using this timer to create a millisecond delay feature, you’ll want to divide your clock by 1,000 to get the appropriate value. In my case my NEXYS 4 has a 100 MHz clock signal, so I would divide 100,000,000/1,000 = 100,000 to get my desired value. We’re also going to need the interrupt, so clic ‘Generate Interrupt’.</p>
+
+<p>Finally click the GPO (General Purpose Output) tab, click ‘Use GPO’ for GPO 1, and set the number of bits to 8 (thus creating a 8 bit wide output port).</p>
+<img src="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/gpo-tab.png">
+<p>Click generate and ISE will begin to generate your processor. This process will take a few minutes so give it time to complete.</p>
+<img src="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/hdl-template.png">
+<p>We now need to create a top file to instantiate our processor. Right click again on the project hierarchy and click ‘New Source…’ click either ‘Verilog Module’ or ‘VHDL Module’ and give it a name such as ‘microblaze_top’. ISE creates a HDL instantiation template we can insert into our top file, saving us a good amount of work. Click on the MicroBlaze xco file in the project hierarchy, and then in the window below expand ‘CORE Generator’ and double click ‘View HDL Instantiation Template’. This will open  a window which will contain code similar to the lines below:</p>
+<figure class="highlight v"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG</span></span><br><span class="line">microblaze your_instance_name (</span><br><span class="line">  <span class="typename">.Clk</span>(Clk), <span class="comment">// input Clk</span></span><br><span class="line">  <span class="typename">.Reset</span>(Reset), <span class="comment">// input Reset</span></span><br><span class="line">  <span class="typename">.UART_Rx</span>(UART_Rx), <span class="comment">// input UART_Rx</span></span><br><span class="line">  <span class="typename">.UART_Tx</span>(UART_Tx), <span class="comment">// output UART_Tx</span></span><br><span class="line">  <span class="typename">.FIT1_Interrupt</span>(FIT1_Interrupt), <span class="comment">// output FIT1_Interrupt</span></span><br><span class="line">  <span class="typename">.FIT1_Toggle</span>(FIT1_Toggle), <span class="comment">// output FIT1_Toggle</span></span><br><span class="line">  <span class="typename">.GPO1</span>(GPO1), <span class="comment">// output [7 : 0] GPO1</span></span><br><span class="line">  <span class="typename">.INTC_IRQ</span>(INTC_IRQ) <span class="comment">// output INTC_IRQ</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">// INST_TAG_END ------ End INSTANTIATION Template ---------</span></span><br></pre></td></tr></table></figure>
+<p>Copy this code and insert it into your top file. You can omit assigning signals to the FIT1 Interrupt and Toggle, as well as INTC_IRQ in this example since we will not be using them outside of the processor. Be sure to change ‘your_instance_name’ to the value you wrote down when generating the core (mcs_0 in this example). Your complete code should look similar to the following:</p>
+<figure class="highlight v"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> microblaze_top(</span><br><span class="line">	<span class="keyword">input</span> Clk,</span><br><span class="line">	<span class="keyword">input</span> Reset,</span><br><span class="line">	<span class="keyword">input</span> UART_Rx,</span><br><span class="line">	<span class="keyword">output</span> UART_Tx,</span><br><span class="line">	<span class="keyword">output</span> [<span class="number">7</span><span class="keyword">:</span><span class="number">0</span>] GPO1</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">microblaze mcs_0 (</span><br><span class="line">  <span class="typename">.Clk</span>(Clk), <span class="comment">// input Clk</span></span><br><span class="line">  <span class="typename">.Reset</span>(Reset), <span class="comment">// input Reset</span></span><br><span class="line">  <span class="typename">.UART_Rx</span>(UART_Rx), <span class="comment">// input UART_Rx</span></span><br><span class="line">  <span class="typename">.UART_Tx</span>(UART_Tx), <span class="comment">// output UART_Tx</span></span><br><span class="line">  <span class="typename">.FIT1_Interrupt</span>(), <span class="comment">// output FIT1_Interrupt</span></span><br><span class="line">  <span class="typename">.FIT1_Toggle</span>(), <span class="comment">// output FIT1_Toggle</span></span><br><span class="line">  <span class="typename">.GPO1</span>(GPO1), <span class="comment">// output [7 : 0] GPO1</span></span><br><span class="line">  <span class="typename">.INTC_IRQ</span>() <span class="comment">// output INTC_IRQ</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<p>At this point you’re going to want to generate a constraints file to map your I/O to sites available on your chip. We the need to execute a tcl script to setup the MicroBlaze so it is properly included in our synthesis. If you do not have the tcl console already open, click View -&gt; Panels -&gt; Tcl Console. Then type the following into the console:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ipcore_dir/microblaze_mcs_setup.tcl</span><br></pre></td></tr></table></figure>
+<p>You should get output similar to the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">microblaze_mcs_setup: Found 1 MicroBlaze MCS core.&#10;microblaze_mcs_setup: Added &#34;-bm&#34; option for &#34;microblaze.bmm&#34; to ngdbuild command line options.&#10;microblaze_mcs_setup: Done.</span><br></pre></td></tr></table></figure>
+<p>You’ll now want to implement the design by clicking the top file in the project hierarchy and in the list below right clicking ‘Implement Design’ and finally clicking run.</p>
+<p>After your design is sucessfully implemented, it’s time to begin coding our processor. Open the Xilinx Software Development Kit application. When prompted for a workspace create a new folder called ‘workspace’ inside the folder of your ISE project and choose it. Close the welcome tab in the SDK window if it opens and you will now be sitting at the project interface. Click File -&gt; New -&gt; Application Project. Give the project a name, such as ‘microblaze_app’. Under Target Hardware, click the Hardware Platform drop-down and click ‘Create New’.</p>
+<img src="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/new-target-hw.png">
+<p>When the New Hardware Project window opens, click ‘Browse’ under Target Hardware Specification and browse inside the ipcore_dir of your project. Inside you will see a file named similar to ‘microblaze_sdk.xml’, select this file and click ok. Click finish to return to the New Project window. Ensure that our new hardware platform has been selected, the OS Platform is ‘standalone’, the Language is ‘C’ and ‘Create New’ is selected for Board Support Package. If all these are correct click next. Select ‘Hello World’ from available templates and click Finish.</p>
+<p>The project will compile and you will have three new folders in the Project Explorer. Double click on the folder with the name you gave the project, such as ‘microblaze_app’, expand the src folder and double click ‘helloworld.c’. Here you will see the code that was generated. Modify the code so that it is similar to the code below:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> "platform.h"</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;xparameters.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;xiomodule.h&gt;</span></span><br><span class="line"></span><br><span class="line">XIOModule gpo;</span><br><span class="line"><span class="keyword">volatile</span> u32 ct = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">timerTick</span><span class="params">(<span class="keyword">void</span>* ref)</span> </span>&#123;</span><br><span class="line">    ct++; <span class="comment">// increase ct every millisecond</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(u32 ms)</span> </span>&#123;</span><br><span class="line">    ct = <span class="number">0</span>; <span class="comment">// set the counter to 0</span></span><br><span class="line">    <span class="keyword">while</span> (ct &lt; ms); <span class="comment">// wait for ms number of milliseconds</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    init_platform();</span><br><span class="line"></span><br><span class="line">    XIOModule_Initialize(&amp;gpo, XPAR_IOMODULE_0_DEVICE_ID); <span class="comment">// Initialize the GPO module</span></span><br><span class="line"></span><br><span class="line">	microblaze_register_handler(XIOModule_DeviceInterruptHandler,</span><br><span class="line">			XPAR_IOMODULE_0_DEVICE_ID); <span class="comment">// register the interrupt handler</span></span><br><span class="line"></span><br><span class="line">	XIOModule_Start(&amp;gpo); <span class="comment">// start the GPO module</span></span><br><span class="line"></span><br><span class="line">	XIOModule_Connect(&amp;gpo, XIN_IOMODULE_FIT_1_INTERRUPT_INTR, timerTick,</span><br><span class="line">			NULL); <span class="comment">// register timerTick() as our interrupt handler</span></span><br><span class="line">	XIOModule_Enable(&amp;gpo, XIN_IOMODULE_FIT_1_INTERRUPT_INTR); <span class="comment">// enable the interrupt</span></span><br><span class="line"></span><br><span class="line">	microblaze_enable_interrupts(); <span class="comment">// enable global interrupts</span></span><br><span class="line"></span><br><span class="line">	xil_printf(<span class="string">"Ready"</span>);</span><br><span class="line"></span><br><span class="line">	u8 leds = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="comment">// write the LED value to port 1 (you can have up to 4 ports)</span></span><br><span class="line">		XIOModule_DiscreteWrite(&amp;gpo, <span class="number">1</span>, leds++);</span><br><span class="line">		xil_printf(<span class="string">"%d"</span>, leds);</span><br><span class="line">		delay(<span class="number">1000</span>); <span class="comment">// delay one second</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Save the file and if the code does not auto compile, click Project -&gt; Build All from the top menu. There is one last command we need to run in the tcl console to include our elf file we just created in our bit file. Go back to ISE and run the following command in the Tcl Console tab (change the values to the appropriate names if needed):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">microblaze_mcs_data2mem workspace/microblaze_app/Debug/microblaze_app.elf</span><br></pre></td></tr></table></figure>
+<p>Which should generate the following output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">microblaze_mcs_data2mem: Found 1 MicroBlaze MCS core.&#10;microblaze_mcs_data2mem: Using &#34;microblaze_app.elf&#34; for microblaze&#10;microblaze_mcs_data2mem: Added &#34;-bd&#34; options to bitgen command line.&#10;microblaze_mcs_data2mem: Running &#34;data2mem&#34; to create simulation files.&#10;microblaze_mcs_data2mem: Bitstream does not exist. Not running &#34;data2mem&#34; to update bitstream.&#10;microblaze_mcs_data2mem: Done.</span><br></pre></td></tr></table></figure>
+<p>Right click ‘Generate Programming File’ in the Design window and click run to generate the bit file needed to program the board. Upon uploading to the board, you should see the LED’s incrementing every second to the corresponding value in binary. If you connect to the UART pins, you will also see the current value in decimal being printed every second.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ibelimb.com/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/" data-id="cirobdgup0002ychbsyilx574" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electronics/">electronics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xilinx/">xilinx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-an-adventure-in-smd-building-a-bus-pirate-v4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/" class="article-date">
+  <time datetime="2013-01-11T23:32:00.000Z" itemprop="datePublished">2013-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/">An Adventure in Electronics: Building a Bus Pirate V4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/buspirate.jpg">
+<p>I had recently been on the hunt for useful tools to add to my workbench, when I came across <a href="http://dangerousprototypes.com/" target="_blank" rel="external">Dangerous Prototypes</a> Bus Pirate. This handy little device allows you to easily communicate with chips of all kind through various supported protocols, sniff SPI and I2C communication, program AVR’s and a whole bunch of other awesome stuff.</p>
+<p>The folks over at Dangerous Prototypes are currently in the process of releasing a new version of the Bus Pirate, v4. With this new version, they did all sorts of nice improvements, mainly upgrading to a PIC24FJ256 microcontroller for extra room to add new features. Having decided I wanted one of these awesome gadgets I headed over to <a href="http://www.seeedstudio.com/" target="_blank" rel="external">Seeed Studio</a> to get one. Annnnddd… out of stock, bummer. But by chance I happened to stumble across a <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=4&amp;t=4511" target="_blank" rel="external">forum post</a> by user schazamp who had set out to order a set of v4 PCB’s compatible with the Sick of Beige case. Two minutes later I had sent him $10 for two of the boards.</p>
+<p>A couple days later and I had the boards in hand. Now being the foolish dope I am, I took the supplied mouser cart from the BP v4 wiki and after having to find a replacement for the now discontinued 3.3 volt LOD voltage regulators in the cart, I sent my order and waited. This was mistake number one. I was so excited about this that I didn’t even bother to match up the BOM (Bill Of Materials) against the cart. I was short quite a few pieces. The cart had the LED’s but the required resistors weren’t there. PNP Transistors? nope forgot those too. CD4066 IC? Nope wasn’t in there either. Lesson one: Don’t take things for granted, make sure you double check things yourself. Of course I only realized I was missing these parts way into my journey, so let’s continue.</p>
+<img src="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/bp-1.jpg">
+<p>PCB’s and components in hand, I set out to build my first real SMD device. The closest I had gotten before was a HTTSOP TLC5951 chip, which with some solder wick was no problem. Following the wiki, I wired up the bare minimum to get the PIC chip working. Being an AVR chip guy, I didn’t have a PIC programmer lying around. Luckily for me, Fezoj on the forum had written some <a href="http://dangerousprototypes.com/forum/viewtopic.php?t=3093" target="_blank" rel="external">nifty code</a> for using an ATMega8 to program the v3’s pic24 chip. This is where I ran into problem numbers two and three. As with all code, another user tried to make improvements to the AVR code. They seemed right to me, but they weren’t (as far as I could tell) tested code changes. But seeing as how they looked good to me, I went ahead and modified the code to work with a ATMega168/328 (which mostly meant adding a “0” to the appropriate code for the UART). I then uploaded it to a spare arduino, and hooked it up to the PIC. It didn’t work, I got a device ID of 0xFFFF which shouldn’t exist. I tried everything. I took out the chip and put it on a breadboard with 3.3 volt supply and everything but nothing worked. Wonderful.</p>
+<p>I spent about 6 hours messing around with it to get it work. Maybe my 328 wouldn’t work. Maybe it would work on a 168. No good. I finally gave up and went to bed. The next morning I went back at it. Only this is when I should have started to go on the forums or IRC and ask for help. But I didn’t. That’s lesson number two: Ask for help instead of doing the same thing over and over. An hour or so in, I figured maybe this untested code was wrong. So I downloaded Fezoj’s original code and modified it for the 168/328 UART, uploaded the code and plugged it in. Something was different this time! It was reading a device ID finally! Excited I loaded the Bus Pirate bootloader (which was smaller and thus would take less time to upload then the whole firmware) into the upload program and had it write the code. 20 minutes later and it was done. I took my new pride and joy, and plugged it in… only for no com port to show up. I wouldn’t be able to upload the firmware if I couldn’t talk to the device. Maybe it messed up along the way, so I reloaded the bootloader. Nothing again. Repeat this several times with various troubleshooting ideas. And still nothing.</p>
+<p>Finally I decided to look at the PDF Fezoj posted on how he came up with the code to program the PIC. Comparing the device ID’s listed in the PDF to what I was getting, I realized what I had wasn’t in the PDF. Ha! That there was the problem! Clearly either the program, or the AVR, or heck even the PIC was messing something up. Only, that wasn’t the case. The PDF I was reading didn’t have the device ID’s for the PIC24FJ256 series. I hadn’t even bothered to look at the device names in the sheet because I was just so frustrated. Lesson number three: Make sure you are looking at the right information in the right frame of mind.</p>
+<p>It was about this time I decided that it was most likely the fact that this code was written for an ATMega8 and I was fubaring it by trying to get it to work on my 328/168. So I caved in an ordered an ATMega8 from mouser along with some crystals and ceramic caps I wanted to add to my toolbox anyway and went to bed.</p>
+<p>The next day, running out of options I finally decided that maybe by having only the bare minimum circuitry hooked up, I could only talk to the chip via ICSP. Maybe I needed the crystal and all that hooked up. So I soldered all the parts I had ordered on… and realized I didn’t even have the capacitors for the crystals. A large portion of the components were on, and with the exception of the capacitors it should work. So like an idiot I soldered on two through-hole caps onto the SMD pads. Lesson number four: Patience is a virtue, and if you try and fit a square peg through a round hole… you’re going to end up breaking something. I ended up ripping off one of the solder pads for a capacitor, but luckily that happens at the end of the story.</p>
+<p>Taking my frankenstein beast I gave it one last go and plugged it into the machine. Thinking to myself “It was definitely because the PIC didn’t have its external crystal, it’s going to work now!”, I plugged it in and again got.. nothing. I just couldn’t win. I caved in. I placed a second follow up order on mouser for the missing components (along with one resistor that I lost while holding it in my tweezers) and a PICKIt to program the chip. I paid 12 dollars in shipping for two different orders in less the 24 hours. Lesson four: Don’t place an order until you’re absolutely certain you’ve got everything you need, and don’t do it on the fly.</p>
+<img src="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/bp-2.jpg">
+<p>Defeated I decided what the hell, I’d load the entire firmware onto the chip and see what happened. An hour or so goes by, and it finally finishes. I plugged it in expecting nothing and to my surprise there it was. I finally got it to work. The programmer had been working the entire time. There was never anything wrong with the PIC. Later I realized while looking at the PDF for using ICSP on the PIC24FJ256 series, the device ID had been correct all along. If I had simply sat down and cleared my mind, or asked others about my problem I probably would’ve been done yesterday and not had ordered the ATMega8 or PIC programmer I no longer needed. I felt like an idiot. I felt like an even bigger idiot when I ripped off the pad for the capacitor after finally getting it to work. But that was easily fixed with a little wire jumper.</p>
+<p>The next day came and I received the other missing components. I soldered the rest on (except for one chip, the CD4066 which I ordered in the wrong package size… be diligent!) and thats where I learned the last lesson of today: SMD LED’s and well, all components, still have to be oriented properly. I soldered them all on backwards because I was excited to finish my little bus pirate. That was pretty stupid. Luckily I made sure to check the orientation of all other parts before soldering them. But at least now I have a working bus pirate! (Except for the CD4066 which is coming in from digikey).</p>
+<p>I hope if you’ve read this far and you are just starting out in electronics that you’ve learned something and won’t make the same stupid mistakes I did. Granted if this was a more serious project I definitely wouldn’t have been so arrogant and un-thorough as I was with this project, but sometimes we just get stupid. I will definitely take my time from now on and do things right. This was my first time assembling an SMD device, sourcing parts for something I wasn’t building, and using a PIC.</p>
+<p>I feel like new doors have opened for me. SMD doesn’t look nearly as daunting as it once did. I now know how to use a BOM. I learned some very important things along the way. Perhaps sometime I’ll get around to making that second Bus Pirate, and this time I’ll know what I’m doing.</p>
+<img src="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/bp-3.jpg">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ibelimb.com/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/" data-id="cirobdgv70007ychb6ld7to1i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electronics/">electronics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smd/">smd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/01/02/hello-world/" class="article-date">
+  <time datetime="2013-01-02T15:29:00.000Z" itemprop="datePublished">2013-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/02/hello-world/">Hello, World!</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>First post for the blog. Nothing to see here, move along.. move along.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ibelimb.com/2013/01/02/hello-world/" data-id="cirobdgub0000ychb99f85gl1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/electronics/">electronics</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/smd/">smd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xilinx/">xilinx</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/electronics/" style="font-size: 20px;">electronics</a><a href="/tags/smd/" style="font-size: 10px;">smd</a><a href="/tags/xilinx/" style="font-size: 10px;">xilinx</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/05/18/Moved-the-blog-over-to-Hexo/">Moved the blog over to Hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/30/generating-a-microblaze-soft-processor-with-ise-webpack-14-dot-7/">Generating a MicroBlaze soft processor with ISE WebPACK 14.7</a>
+          </li>
+        
+          <li>
+            <a href="/2013/01/11/an-adventure-in-smd-building-a-bus-pirate-v4/">An Adventure in Electronics: Building a Bus Pirate V4</a>
+          </li>
+        
+          <li>
+            <a href="/2013/01/02/hello-world/">Hello, World!</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Kenneth Lorthioir<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
